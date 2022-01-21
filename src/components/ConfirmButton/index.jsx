@@ -5,7 +5,7 @@ import { styles } from './styles';
 export function ConfirmButton(props){
     return (
         <TouchableOpacity style={styles.container} activeOpacity={0.9} {...props}>
-        <Text>Confirm</Text>
+        <Text>Confirmar</Text>
         </TouchableOpacity>
       );
 }

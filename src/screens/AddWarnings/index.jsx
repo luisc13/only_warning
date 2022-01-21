@@ -3,7 +3,7 @@ import {
   View,
   SafeAreaView,
   Text,
-  TextInput
+  TextInput,
 } from 'react-native';
 import { styles } from './styles';
 import { ExitButton } from '../../components/ExitButton';
@@ -47,7 +47,7 @@ export function AddWarnings(){
         <ExitButton onPress={handleLogout}/>
       </View>
       <TextInput placeholder="Título" placeholderColor="#c4c3cb" style={styles.titleInput} onChangeText={(e) => setTitle(e)} value={title}/>
-      <TextInput placeholder="Conteúdo" placeholderColor="#c4c3cb" style={styles.contentInput} onChangeText={(e) => setContent(e)} value={content}/>
+      <TextInput multiline={true} placeholder="Conteúdo" placeholderColor="#c4c3cb" style={styles.contentInput} onChangeText={(e) => setContent(e)} value={content}/>
         <ConfirmButton onPress={handleSubmit}/>
     </SafeAreaView>
   );

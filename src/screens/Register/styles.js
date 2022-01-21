@@ -23,6 +23,19 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     paddingLeft: 10,
     marginTop: 5,
-    marginBottom: 5,
+    marginBottom: 10,
+  },
+  pickerContainer: {
+    width: 200,
+    height: 40,
+    borderRadius: 5,
+    backgroundColor: theme.colors.white,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 15,
+  },
+  userPicker:{
+    height: 50,
+    width: 150,
   }
 });

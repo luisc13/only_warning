@@ -7,7 +7,8 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   TextInput,
-  Picker
+  Picker,
+  View
 } from 'react-native';
 import {RegisterButton} from '../../components/RegisterButton';
 import { ReturnButton } from '../../components/ReturnButton';
@@ -22,6 +23,10 @@ export function Register(){
   const [type, setType] = React.useState('user');
 
   async function handleRegister(){
+    if(username == '' || password == ''){
+      alert('Preencha todos os campos');
+      return
+    }
     try {
       const response = await api.post('/create/user', {type, username, password});
       await AsyncStorage.setItem('@userId', String(response.data.id));
@@ -45,14 +50,17 @@ export function Register(){
       </TouchableWithoutFeedback>
       <TextInput placeholder="Username" placeholderColor="#c4c3cb" style={styles.loginInput} onChangeText={(e) => setUsername(e)}/>
       <TextInput placeholder="Password" placeholderColor="#c4c3cb" style={styles.loginInput} secureTextEntry={true} onChangeText={ (e) =>setPassword(e)}/>
+      <Text>Tipo de usuario:</Text>
+      <View style={styles.pickerContainer}>
       <Picker
         selectedValue={type}
-        style={{ height: 50, width: 150 }}
+        style={styles.userPicker}
         onValueChange={(itemValue) => setType(itemValue)}
       >
       <Picker.Item label="Admin" value="admin" />
       <Picker.Item label="User" value="user" />
       </Picker>
+      </View>
       <RegisterButton onPress={handleRegister}/>
       <ReturnButton onPress={handleGoback}/>
     </KeyboardAvoidingView>
