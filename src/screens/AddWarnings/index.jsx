@@ -23,6 +23,10 @@ export function AddWarnings(){
   }
 
   async function handleSubmit(){
+    if(title == '' || content == ''){
+      alert('Preencha todos os campos');
+      return
+    }
       try {
         const value = await AsyncStorage.getItem('@userId')
         const id = Number(value);

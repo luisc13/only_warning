@@ -22,9 +22,11 @@ export const styles = StyleSheet.create({
   },
   warnings:{
     width: 400,
-    height: 70,
+    minHeight: 70,
+    maxHeight: 500,
     backgroundColor: '#fff',
     marginTop: 20,
+    marginBottom: 10,
     alignItems: 'center',
     borderRadius: 8,
     justifyContent: 'space-between',
