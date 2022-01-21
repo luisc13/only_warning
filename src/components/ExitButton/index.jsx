@@ -1,11 +1,11 @@
-import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
+import React from "react";
+import { Text, TouchableOpacity } from "react-native";
+import { styles } from "./styles";
 
-export function ExitButton(props){
+export function ExitButton(props) {
   return (
     <TouchableOpacity style={styles.container} activeOpacity={0.9} {...props}>
-        <Text>Voltar</Text>
+      <Text>Voltar</Text>
     </TouchableOpacity>
   );
 }

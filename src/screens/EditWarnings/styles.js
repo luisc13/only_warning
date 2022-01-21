@@ -1,42 +1,41 @@
-import { StyleSheet } from 'react-native';
-import { theme } from '../../global/themes/styles';
-
+import { StyleSheet } from "react-native";
+import { theme } from "../../global/themes/styles";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     backgroundColor: theme.colors.Gray,
   },
-  header:{
-    width: '100%',
+  header: {
+    width: "100%",
     paddingHorizontal: 24,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop:30,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 30,
     marginBottom: 42,
   },
-  headerText:{
+  headerText: {
     fontSize: 30,
     fontWeight: "400",
   },
-  warnings:{
+  warnings: {
     width: 400,
     minHeight: 70,
     maxHeight: 500,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     marginTop: 20,
     marginBottom: 10,
-    alignItems: 'center',
+    alignItems: "center",
     borderRadius: 8,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
   },
-  warningTitle:{
+  warningTitle: {
     fontSize: 20,
-    fontWeight: '300',
+    fontWeight: "300",
   },
-  warningContent:{
+  warningContent: {
     fontSize: 16,
-    fontWeight: '300',
-  }
+    fontWeight: "300",
+  },
 });

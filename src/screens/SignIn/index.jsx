@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Text,
   KeyboardAvoidingView,
@@ -6,52 +6,63 @@ import {
   Keyboard,
   TextInput,
   Image,
-} from 'react-native';
-import {LoginButton} from '../../components/LoginButton';
-import {RegisterButton} from '../../components/RegisterButton';
-import midiaImg from '../../assets/midia.png';
-import { styles } from './styles';
-import { useNavigation } from '@react-navigation/native';
-import api from '../../services/api';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+} from "react-native";
+import { LoginButton } from "../../components/LoginButton";
+import { RegisterButton } from "../../components/RegisterButton";
+import midiaImg from "../../assets/midia.png";
+import { styles } from "./styles";
+import { useNavigation } from "@react-navigation/native";
+import api from "../../services/api";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export function SignIn(){
+export function SignIn() {
   const navigation = useNavigation();
-  const [username, setUsername] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  
-  async function handleLogin(){
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  async function handleLogin() {
     try {
-      const response = await api.post('/login', {
+      const response = await api.post("/login", {
         username,
-        password
+        password,
       });
-      await AsyncStorage.setItem('@userId', String(response.data.id));
-      if(response.data.type === 'admin'){
-        navigation.navigate('Home');
+      await AsyncStorage.setItem("@userId", String(response.data.id));
+      if (response.data.type === "admin") {
+        navigation.navigate("Home");
       } else {
-        navigation.navigate('UserHome');
+        navigation.navigate("UserHome");
       }
     } catch (error) {
-      alert('Usuário ou senha incorretos');
-      return
+      alert("Usuário ou senha incorretos");
+      return;
     }
   }
-  function handleGoRegister(){
-    navigation.navigate('Register');
+  function handleGoRegister() {
+    navigation.navigate("Register");
   }
   return (
     <KeyboardAvoidingView style={styles.container}>
-      <Image source={midiaImg} style={styles.Icon}/>
+      <Image source={midiaImg} style={styles.Icon} />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <>
-      <Text style={styles.logoText}>Login</Text>
-      <TextInput placeholder="Username" placeholderColor="#c4c3cb" style={styles.loginInput} onChangeText={(e) => setUsername(e)}/>
-      <TextInput placeholder="Password" placeholderColor="#c4c3cb" style={styles.loginInput} secureTextEntry={true} onChangeText={(e) => setPassword(e)}/>
-      </>
+        <>
+          <Text style={styles.logoText}>Login</Text>
+          <TextInput
+            placeholder="Username"
+            placeholderColor="#c4c3cb"
+            style={styles.loginInput}
+            onChangeText={(e) => setUsername(e)}
+          />
+          <TextInput
+            placeholder="Password"
+            placeholderColor="#c4c3cb"
+            style={styles.loginInput}
+            secureTextEntry={true}
+            onChangeText={(e) => setPassword(e)}
+          />
+        </>
       </TouchableWithoutFeedback>
-      <LoginButton onPress={handleLogin}/>
-      <RegisterButton onPress={handleGoRegister}/>
+      <LoginButton onPress={handleLogin} />
+      <RegisterButton onPress={handleGoRegister} />
     </KeyboardAvoidingView>
   );
 }

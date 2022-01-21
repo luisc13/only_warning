@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
-import { theme } from '../../global/themes/styles';
+import { StyleSheet } from "react-native";
+import { theme } from "../../global/themes/styles";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
   logoText: {
     fontSize: 40,
@@ -25,9 +25,9 @@ export const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
   },
-  Icon:{
+  Icon: {
     width: 200,
     height: 100,
     marginTop: 50,
-  }
+  },
 });

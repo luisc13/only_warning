@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
-import { theme } from '../../global/themes/styles';
+import { StyleSheet } from "react-native";
+import { theme } from "../../global/themes/styles";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
   logoText: {
     fontSize: 40,
@@ -30,12 +30,12 @@ export const styles = StyleSheet.create({
     height: 40,
     borderRadius: 5,
     backgroundColor: theme.colors.white,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 15,
   },
-  userPicker:{
+  userPicker: {
     height: 50,
     width: 150,
-  }
+  },
 });
