@@ -1,5 +1,5 @@
 import React from "react";
-import { View, SafeAreaView, Text, TextInput } from "react-native";
+import { View, SafeAreaView, Text, TextInput, Keyboard } from "react-native";
 import { styles } from "./styles";
 import { ExitButton } from "../../components/ExitButton";
 import { useNavigation } from "@react-navigation/native";
@@ -39,9 +39,9 @@ export function AddWarnings() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} onPress={Keyboard.dismiss}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Adicionar avisos</Text>
+        <Text style={styles.headerText} onPress={Keyboard.dismiss}>Adicionar avisos</Text>
         <ExitButton onPress={handleLogout} />
       </View>
       <TextInput

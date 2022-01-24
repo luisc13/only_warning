@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, SafeAreaView, Text, TextInput } from "react-native";
+import { View, SafeAreaView, Text, TextInput, Keyboard } from "react-native";
 import { styles } from "./styles";
 import { ExitButton } from "../../components/ExitButton";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -37,7 +37,7 @@ export function EditSelectedWarning() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Adicionar avisos</Text>
+        <Text style={styles.headerText} onPress={Keyboard.dismiss}>Adicionar avisos</Text>
         <ExitButton onPress={handleGoBack} />
       </View>
       <TextInput

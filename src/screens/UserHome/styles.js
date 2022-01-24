@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: theme.colors.Gray,
+    backgroundColor: theme.colors.white,
   },
   header: {
     width: "100%",
@@ -20,15 +20,16 @@ export const styles = StyleSheet.create({
     fontWeight: "400",
   },
   warnings: {
-    width: 400,
+    width: 350,
     minHeight: 70,
     maxHeight: 500,
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.Gray,
     marginTop: 20,
     marginBottom: 10,
     alignItems: "center",
-    borderRadius: 8,
+    borderRadius: 3,
     justifyContent: "space-between",
+    alignSelf: "center"
   },
   warningTitle: {
     fontSize: 20,
@@ -38,4 +39,13 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "300",
   },
+  divider: {
+    width: 370,
+    height: 4,
+    borderColor: theme.colors.Gray,
+    backgroundColor: theme.colors.Gray,
+    marginTop: 10,
+    borderWidth: 1,
+    borderRadius: 2,
+  }
 });

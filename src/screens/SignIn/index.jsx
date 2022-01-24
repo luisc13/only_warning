@@ -41,11 +41,10 @@ export function SignIn() {
     navigation.navigate("Register");
   }
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} onPress={Keyboard.dismiss}>
       <Image source={midiaImg} style={styles.Icon} />
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <>
-          <Text style={styles.logoText}>Login</Text>
+          <Text style={styles.logoText} onPress={Keyboard.dismiss}>Login</Text>
           <TextInput
             placeholder="Username"
             placeholderColor="#c4c3cb"
@@ -60,7 +59,6 @@ export function SignIn() {
             onChangeText={(e) => setPassword(e)}
           />
         </>
-      </TouchableWithoutFeedback>
       <LoginButton onPress={handleLogin} />
       <RegisterButton onPress={handleGoRegister} />
     </KeyboardAvoidingView>

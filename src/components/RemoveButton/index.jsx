@@ -1,12 +1,13 @@
 import React from "react";
-import { Image, TouchableOpacity } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 import { styles } from "./styles";
-import RemoveImage from "../../assets/remove.png";
+import RemoveImage from "../../assets/minus-square.svg";
 
 export function RemoveButton(props) {
   return (
     <TouchableOpacity style={styles.container} activeOpacity={0.9} {...props}>
-      <Image source={RemoveImage} style={styles.icon} />
+      <RemoveImage width={30} height={30} style={styles.icon}/>
+      <Text style={styles.text}>Excluir</Text>
     </TouchableOpacity>
   );
 }

@@ -1,19 +1,24 @@
 import { StyleSheet } from "react-native";
-
+import { theme } from "../../global/themes/styles";
 export const styles = StyleSheet.create({
   container: {
     width: 150,
     height: 150,
     borderRadius: 8,
-    backgroundColor: "#fff",
+    borderWidth: 2,
+    borderColor: '#000',
+    backgroundColor: theme.colors.Gray,
     alignItems: "center",
-    flexDirection: "row",
     marginTop: 60,
     marginLeft: 30,
   },
   icon: {
-    width: 50,
-    height: 50,
-    marginLeft: 50,
+    marginLeft: 80,
+    marginTop: 5,
   },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 30,
+  }
 });

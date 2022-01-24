@@ -1,13 +1,14 @@
 import React from "react";
-import { Image, TouchableOpacity } from "react-native";
-import AddImage from "../../assets/add.png";
+import { TouchableOpacity,Text } from "react-native";
+import AddImage from "../../assets/add-square.svg";
 
 import { styles } from "./styles";
 
 export function AddButton(props) {
   return (
     <TouchableOpacity style={styles.container} activeOpacity={0.9} {...props}>
-      <Image source={AddImage} style={styles.icon} />
+      <AddImage width={30} height={30} style={styles.icon}/>
+      <Text style={styles.text}>Inserir</Text>
     </TouchableOpacity>
   );
 }

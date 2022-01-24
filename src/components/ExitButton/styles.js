@@ -6,8 +6,10 @@ export const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 8,
-    backgroundColor: theme.colors.white,
     alignItems: "center",
     justifyContent: "center",
   },
+  text:{
+    fontSize: 18,
+  }
 });

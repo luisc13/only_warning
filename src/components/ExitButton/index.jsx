@@ -5,7 +5,7 @@ import { styles } from "./styles";
 export function ExitButton(props) {
   return (
     <TouchableOpacity style={styles.container} activeOpacity={0.9} {...props}>
-      <Text>Voltar</Text>
+      <Text style={styles.text}>Sair</Text>
     </TouchableOpacity>
   );
 }

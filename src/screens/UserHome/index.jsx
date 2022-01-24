@@ -9,7 +9,7 @@ import { useFocusEffect } from "@react-navigation/native";
 import { ScrollView } from "react-native-gesture-handler";
 
 export function UserHome() {
-  navigation = useNavigation();
+  const navigation = useNavigation();
   const [warnings, setWarnings] = React.useState([]);
 
   useFocusEffect(
@@ -39,10 +39,13 @@ export function UserHome() {
       </View>
       <ScrollView>
         {warnings.map((warning) => (
-          <View style={styles.warnings} key={warning.id}>
-            <Text style={styles.warningTitle}>{warning.title}</Text>
-            <Text style={styles.warningContent}>{warning.content}</Text>
-          </View>
+          <>
+            <View style={styles.warnings} key={warning.id}>
+              <Text style={styles.warningTitle}>{warning.title}</Text>
+              <Text style={styles.warningContent}> {warning.content}</Text>
+            </View>
+            <View style={styles.divider}></View>
+          </>
         ))}
       </ScrollView>
     </SafeAreaView>
