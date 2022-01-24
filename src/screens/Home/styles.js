@@ -12,8 +12,16 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 30,
+    marginTop: 40,
     marginBottom: 42,
+  },
+  alertText:{
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+  },
+  alertIcon:{
+    marginLeft: 10,
+    marginTop: 5,
   },
   headerText: {
     fontSize: 30,
@@ -29,7 +37,8 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 3,
     justifyContent: "space-between",
-    alignSelf: "center"
+    alignSelf: "center",
+    padding: 5,
   },
   warningTitle: {
     fontSize: 20,

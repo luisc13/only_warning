@@ -2,7 +2,6 @@ import React from "react";
 import {
   Text,
   KeyboardAvoidingView,
-  TouchableWithoutFeedback,
   Keyboard,
   TextInput,
   Image,
@@ -41,8 +40,8 @@ export function SignIn() {
     navigation.navigate("Register");
   }
   return (
-    <KeyboardAvoidingView style={styles.container} onPress={Keyboard.dismiss}>
-      <Image source={midiaImg} style={styles.Icon} />
+    <KeyboardAvoidingView style={styles.container}>
+      <Image source={midiaImg} style={styles.Icon} onPress={Keyboard.dismiss}/>
         <>
           <Text style={styles.logoText} onPress={Keyboard.dismiss}>Login</Text>
           <TextInput

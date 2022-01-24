@@ -1,7 +1,7 @@
 import React from "react";
 import { View, SafeAreaView, Text, TextInput, Keyboard } from "react-native";
 import { styles } from "./styles";
-import { ExitButton } from "../../components/ExitButton";
+import { GoBackButton } from "../../components/GoBackButton";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../services/api";
 import { ConfirmButton } from "../../components/ConfirmButton";
@@ -12,7 +12,7 @@ export function AddWarnings() {
   const [content, setContent] = React.useState("");
   const [title, setTitle] = React.useState("");
 
-  function handleLogout() {
+  function handleGoBack() {
     navigation.navigate("Home");
   }
 
@@ -32,6 +32,7 @@ export function AddWarnings() {
       alert("Aviso criado com sucesso!");
       setContent("");
       setTitle("");
+      navigation.navigate("Home");
     } catch (error) {
       alert(error.message);
       return;
@@ -42,7 +43,7 @@ export function AddWarnings() {
     <SafeAreaView style={styles.container} onPress={Keyboard.dismiss}>
       <View style={styles.header}>
         <Text style={styles.headerText} onPress={Keyboard.dismiss}>Adicionar avisos</Text>
-        <ExitButton onPress={handleLogout} />
+        <GoBackButton onPress={handleGoBack} />
       </View>
       <TextInput
         placeholder="Título"

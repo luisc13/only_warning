@@ -8,7 +8,7 @@ import {
   Alert,
 } from "react-native";
 import { styles } from "./styles";
-import { ExitButton } from "../../components/ExitButton";
+import { GoBackButton } from "../../components/GoBackButton";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../services/api";
 import { ScrollView } from "react-native-gesture-handler";
@@ -34,6 +34,7 @@ export function RemoveWarnings() {
             try {
               await api.post("/delete/warnings", { id });
               alert("Aviso deletado com sucesso!");
+              navigation.navigate("Home");
             } catch (err) {
               alert(err.message);
               return;
@@ -71,7 +72,7 @@ export function RemoveWarnings() {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Remover Aviso</Text>
-        <ExitButton onPress={handleGoBack} />
+        <GoBackButton onPress={handleGoBack} />
       </View>
       <ScrollView>
         <Text>Clique em um aviso para remove-lo</Text>

@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: theme.colors.Gray,
+    backgroundColor: theme.colors.white,
   },
   header: {
     width: "100%",
@@ -23,15 +23,6 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "200",
   },
-  warnings: {
-    width: 400,
-    height: 70,
-    backgroundColor: "#fff",
-    marginTop: 20,
-    alignItems: "center",
-    borderRadius: 8,
-    justifyContent: "space-between",
-  },
   titleInput: {
     width: 200,
     height: 43,
@@ -39,7 +30,7 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: theme.colors.Snow,
-    backgroundColor: theme.colors.white,
+    backgroundColor: theme.colors.Gray,
     paddingLeft: 10,
     marginTop: 10,
     marginBottom: 5,
@@ -51,7 +42,7 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: theme.colors.Snow,
-    backgroundColor: theme.colors.white,
+    backgroundColor: theme.colors.Gray,
     paddingLeft: 10,
     marginTop: 5,
     marginBottom: 5,

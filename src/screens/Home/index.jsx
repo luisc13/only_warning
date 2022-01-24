@@ -10,7 +10,7 @@ import { ExitButton } from "../../components/ExitButton";
 import { useNavigation } from "@react-navigation/native";
 import { useFocusEffect } from "@react-navigation/native";
 import api from "../../services/api";
-import {alertImg} from "../../assets/alert.png";
+import AlertImg from "../../assets/alert.svg";
 
 export function Home() {
   const navigate = useNavigation();
@@ -48,8 +48,10 @@ export function Home() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
+        <View style={styles.alertText}>
         <Text style={styles.headerText}>Avisos</Text>
-        <Image source={alertImg} style={styles.image}/>
+        <AlertImg width={30} height={30} style={styles.alertIcon}/>
+        </View>
         <ExitButton onPress={handleExit} />
       </View>
 
@@ -57,23 +59,25 @@ export function Home() {
         horizontal
         contentContainerStyle={{
           paddingBottom: 80,
+          paddingHorizontal: 20,
         }}
         style={{ marginBottom: 30 }}
+        showsHorizontalScrollIndicator={false}
       >
         <AddButton onPress={handleGoAddWarning} />
         <RemoveButton onPress={handleGoRemoveWarning} />
         <EditButton onPress={handleGoEditWarning} />
       </ScrollView>
 
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         {warnings.map((warning) => (
-          <>
-            <View style={styles.warnings} key={warning.id}>
+          <View key={warning.id}>
+            <View style={styles.warnings} >
               <Text style={styles.warningTitle}>{warning.title}</Text>
               <Text style={styles.warningContent}> {warning.content}</Text>
             </View>
             <View style={styles.divider}></View>
-          </>
+          </View>
         ))}
       </ScrollView>
     </SafeAreaView>

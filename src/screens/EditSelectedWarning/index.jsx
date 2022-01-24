@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { View, SafeAreaView, Text, TextInput, Keyboard } from "react-native";
 import { styles } from "./styles";
-import { ExitButton } from "../../components/ExitButton";
+import { GoBackButton } from "../../components/GoBackButton";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import api from "../../services/api";
 import { ConfirmButton } from "../../components/ConfirmButton";
@@ -26,7 +26,8 @@ export function EditSelectedWarning() {
         title,
         content,
       });
-      navigation.navigate("EditWarnings");
+      navigation.navigate("Home");
+      alert("Aviso editado com sucesso!");
     } catch (error) {}
   }
 
@@ -38,7 +39,7 @@ export function EditSelectedWarning() {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText} onPress={Keyboard.dismiss}>Adicionar avisos</Text>
-        <ExitButton onPress={handleGoBack} />
+        <GoBackButton onPress={handleGoBack} />
       </View>
       <TextInput
         placeholder="Título"

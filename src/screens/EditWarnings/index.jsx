@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { View, SafeAreaView, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-import { ExitButton } from "../../components/ExitButton";
+import { GoBackButton } from "../../components/GoBackButton";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../services/api";
 import { useFocusEffect } from "@react-navigation/native";
@@ -35,7 +35,7 @@ export function EditWarnings() {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Editar Aviso</Text>
-        <ExitButton onPress={handleGoBack} />
+        <GoBackButton onPress={handleGoBack} />
       </View>
       <ScrollView>
         <Text>Clique em um aviso para edita-lo</Text>

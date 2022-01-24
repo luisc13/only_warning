@@ -5,14 +5,15 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: theme.colors.Gray,
+    backgroundColor: theme.colors.white,
+    paddingHorizontal: 10,
   },
   header: {
     width: "100%",
     paddingHorizontal: 24,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 30,
+    marginTop: 40,
     marginBottom: 42,
   },
   headerText: {
@@ -23,12 +24,13 @@ export const styles = StyleSheet.create({
     width: 400,
     minHeight: 70,
     maxHeight: 500,
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.Gray,
     marginTop: 20,
     marginBottom: 10,
     alignItems: "center",
     borderRadius: 8,
     justifyContent: "space-between",
+    padding: 5,
   },
   warningTitle: {
     fontSize: 20,

@@ -3,7 +3,6 @@ import React from "react";
 
 import {
   Text,
-  KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
   TextInput,
@@ -48,7 +47,7 @@ export function Register() {
     navigation.navigate("SignIn");
   }
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <View style={styles.container} >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <Text style={styles.logoText}>Cadastrar-se</Text>
       </TouchableWithoutFeedback>
@@ -78,6 +77,6 @@ export function Register() {
       </View>
       <RegisterButton onPress={handleRegister} />
       <ReturnButton onPress={handleGoback} />
-    </KeyboardAvoidingView>
+    </View>
   );
 }

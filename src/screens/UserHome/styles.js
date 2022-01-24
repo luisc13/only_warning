@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 30,
+    marginTop: 40,
     marginBottom: 42,
   },
   headerText: {

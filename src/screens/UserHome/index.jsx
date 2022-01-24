@@ -39,13 +39,13 @@ export function UserHome() {
       </View>
       <ScrollView>
         {warnings.map((warning) => (
-          <>
-            <View style={styles.warnings} key={warning.id}>
+          <View key={warning.id}>
+            <View style={styles.warnings} >
               <Text style={styles.warningTitle}>{warning.title}</Text>
               <Text style={styles.warningContent}> {warning.content}</Text>
             </View>
             <View style={styles.divider}></View>
-          </>
+          </View>
         ))}
       </ScrollView>
     </SafeAreaView>
